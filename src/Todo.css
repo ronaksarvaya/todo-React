@@ -1,0 +1,92 @@
+/* Input and button container */
+.input-container {
+    display: grid;
+    margin: 20px 0;
+  }
+  
+  .input-container input {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .input-container input:focus {
+    border-color: #007bff;
+  }
+  
+  .input-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .input-container button:hover {
+    background-color: #0056b3;
+  }
+  
+ 
+  /* Task list container */
+  .tasks-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .tasks-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .tasks-container li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tasks-container li:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Buttons inside task items */
+  .tasks-container li button {
+    padding: 5px 10px;
+    font-size: 14px;
+    margin-left: 5px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tasks-container li button:hover {
+    background-color: #218838;
+  }
+  
+  .tasks-container li button:last-child {
+    background-color: #dc3545;
+  }
+  
+  .tasks-container li button:last-child:hover {
+    background-color: #c82333;
+  }
+  
