@@ -42,8 +42,11 @@ const Todo = () => {
     setDt(`Date : ${day}-${month}-${year} Time: ${hours}  ${minutes}:${seconds}`);
   };
   
-  // Example: 31-12-24 14:35:50
-  
+  const handleDelete= (l) => {
+    const newl=list.filter((curr)=>curr!==l)
+      setlist(newl)
+
+  }
  
 
   return (<>
@@ -60,18 +63,21 @@ const Todo = () => {
     <div className="date-time">{date_time} </div>
     </div>
    <div className='tasks-container'> <p>
-     { list.map((l)=>{
-      return<li style={{display:"flex",    justifyContent: "space-between",
-        alignItems: "center"}}>
+     {
+      list.map((l,index)=>{
+      return<li key={index} style={{display:"flex",justifyContent: "space-between",alignItems: "center"}}>
         {l} 
-        <span style={{display:"flex"}}><button>DONE</button><button>Delete</button></span>
+        <span style={{display:"flex"}}>
+        <button>DONE</button>
+        <button onClick={()=>handleDelete(l)}>Delete</button></span>
         
         
         </li>})}
     </p>
+    
     </div>
 
-
+    <button className='clearAll' onClick={()=>setlist([])} >Clear All</button>
 
   
   </>
