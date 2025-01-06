@@ -4,8 +4,13 @@ import DateTime from './DateTime'
 import InpAndBtn  from "./InpAndBtn";
 import TaskList from "./TaskList";
 const Todo = () => {
-  const [inp,setinp]=useState("")
-  const [list,setlist]=useState([]) 
+  const [inp,setinp]=useState({})
+  const [list,setlist]=useState(()=>{
+
+  const localList = JSON.parse(localStorage.getItem("mytodo"));
+    return localList || [];
+    
+  }) 
   return (<>  
   <div className='input-container'>
    <InpAndBtn inp={inp} setinp={setinp} list={list} setlist={setlist}/>
