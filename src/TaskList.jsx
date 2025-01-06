@@ -4,6 +4,7 @@ const TaskList = ({ list, setlist }) => {
   const handleDelete = (task) => {
     const newList = list.filter(curr => curr.id !== task.id);
     setlist(newList);
+    localStorage.setItem("mytodo", JSON.stringify(newList));
   };
 
   const handleDone = (id) => {
@@ -31,7 +32,9 @@ const TaskList = ({ list, setlist }) => {
 
           <span style={{ display: "flex" }}>
             <button onClick={() => handleDone(task.id)}>DONE</button>
-            <button onClick={() => handleDelete(task)}>Delete</button>
+            <button onClick={() => {
+              handleDelete(task)
+            }}>Delete</button>
           </span>
         </li>
       ))}
